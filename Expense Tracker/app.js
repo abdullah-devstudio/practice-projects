@@ -2,8 +2,6 @@ import {totalExpense, expenseChart, expenseList, expenseForm, expenseTitle, expe
 
 import{checkStatus, createExpense, addExpense } from "./utils.js"
 
-const list = []
-
 expenseForm.addEventListener("submit", (e) => {
   e.preventDefault();
   checkStatus();
