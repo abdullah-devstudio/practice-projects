@@ -40,8 +40,6 @@ function createExpense(){
   
   addExpense()
 
-  list.push(item)
-
 // Add Expense Function
   export function addExpense(){
   const categoryItem = document.createElement("li")
