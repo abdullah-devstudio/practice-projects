@@ -1,5 +1,5 @@
 // Importing Variables Ftom Utils.js
-import {totalExpense, expenseChart, expenseList, expenseForm, }
+import {totalExpense, expenseChart, expenseList, expenseForm, expenseTitle, expenseAmount, expenseCategory, expenseDate} from "ui.js"
 
 // Checking Empty list and Total
 export function checkStatus(){
@@ -82,3 +82,9 @@ const list = []
   console.log(expenseList.innerHTML, expenseList.childElementCount)
     console.log(expenseChart.innerHTML)
   }
+
+expenseForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  createExpense();
+  expenseForm.reset();
+});
