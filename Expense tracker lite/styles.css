@@ -1,0 +1,149 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* VARIABLES */
+:root{
+  
+  /* COLORS */
+  --primary-color: hwb(142 4% 54%);
+  --secondary-color: #d6d6d6;
+  --accent: hwb(0 46% 54%);
+  --text: hwb(200 11% 87%);
+  --primary-hover: hwb(142 3% 63%);
+  --accent-hover: hwb(0 36% 64%);
+  
+
+  /* SIZING */
+  --sizing-xs: 0.5rem;
+  --sizing-s:  0.75rem;
+  --sizing-m:  1rem;
+  --sizing-l:  1.5rem;
+  --sizing-xl: 2rem;
+  --sizing-xxl: 3rem;
+
+  /* OTHER */
+  --border-radius-cards: 10px;
+  --border-radius-btns:  6px;
+}
+
+
+/* BODY STYLING */
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text);
+}
+
+/* TAGS STYLING */
+
+ul{
+  list-style: none;
+}
+
+header{
+  padding: 16px 8px;
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+main{
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#logo{
+  font-size: 2rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#tagline{
+  margin-top: 8px;
+}
+
+#container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 16px;
+  place-items: center;
+  margin-bottom: 32px;
+}
+
+.container-item{
+  background-color: var(--accent);
+  color: white;
+  padding: 16px 12px;
+  border-radius: var(--border-radius-cards);
+  box-shadow: 0 5px 5px hwb(0 30% 68% / 0.6);
+  width: fit-content;
+}
+
+.expense-item{
+  padding: 8px 12px;
+}
+
+.expense-data{
+  color: white;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.cta-btns{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn{
+  /*display: inline-block;
+  width: fit-content;*/
+  text-align:center ;
+  padding: 12px 8px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius-btns);
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  
+  background-color: var(--accent);
+  border-radius: var(--border-radius-cards);
+  padding: 16px 12px;
+}
+
+.message{
+  font-weight: bold;
+  color: var(--secondary-color)
+}
+
+label{
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input{
+  border: none;
+  border-radius: 6px;
+  padding:4px;
+}
+
+footer{
+  padding: 12px 8px;
+  background-color: var(--primary-color);
+  text-align: center;
+}
