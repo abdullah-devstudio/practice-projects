@@ -21,7 +21,7 @@ export function checkStatus(){
   }
 }
 
-const list = []
+export const list = []
 
 // Create expense function
 function createExpense(){
