@@ -21,8 +21,6 @@ export function checkStatus(){
   }
 }
 
-export const list = []
-
 // Create expense function
 function createExpense(){
   const itemTitle = expenseTitle.value
