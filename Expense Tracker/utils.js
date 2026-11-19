@@ -3,17 +3,22 @@ import {totalExpense, expenseChart, expenseList, expenseForm, expenseTitle, expe
 
 // Checking Empty list and Total
 export function checkStatus(){
-  if(totalExpense.textContent.trim()===""){
-  totalExpense.textContent = "Not Total Yet Add Expense First"
-  totalExpense.classList.add("message")
+  if(expenseList.children.length === 0){
+    const totalMessage = document.createElement("p")
+    totalMessage.textContent = "Not Total Yet Add Expense First"
+    totalMessage.classList.add("message")
+
+    const expenseMessage = document.createElement("p")
+    expenseMessage.textContent = "Not Expense Yet"
+    expenseMessage.classList.add("message")
+  }
+
+  else{
+    createExpense()
+  }
 }
 
-if(expenseList.children.length === 0){
-  const listStatus = document.createElement("p")
-  listStatus.textContent = "Not expense yet"
-  expenseChart.append(listStatus)
-}
-}
+const list = []
 
 // Create expense function
 function createExpense(){
@@ -31,8 +36,6 @@ function createExpense(){
     category : itemCategory,
     date : itemDate
   }
-
-const list = []
   
   addExpense()
 
