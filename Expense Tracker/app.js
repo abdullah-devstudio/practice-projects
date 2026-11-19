@@ -1,6 +1,6 @@
-import {totalExpense, expenseChart, expenseList, expenseForm, expenseTitle, expenseAmount, expenseCategory, expenseDate} from "ui.js"
+import {totalExpense, expenseChart, expenseList, expenseForm, expenseTitle, expenseAmount, expenseCategory, expenseDate} from "./ui.js"
 
-import{checkStatus, list, createExpense, addExpense } from "utils.js"
+import{checkStatus, list, createExpense, addExpense } from "./utils.js"
 
 
 expenseForm.addEventListener("submit", (e) => {
