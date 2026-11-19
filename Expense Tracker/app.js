@@ -15,7 +15,9 @@ const expenseCategory = document.querySelector("#category")
 
 const expenseDate = document.querySelector("#date")
 
-if(totalExpense.textContent.trim()===""){
+// Checking Empty list and Total
+function checkStatus(){
+  if(totalExpense.textContent.trim()===""){
   totalExpense.textContent = "Not Total Yet Add Expense First"
   totalExpense.classList.add("message")
 }
@@ -25,26 +27,9 @@ if(expenseList.children.length === 0){
   listStatus.textContent = "Not expense yet"
   expenseChart.append(listStatus)
 }
+}
 
-const list = []
-
-function createExpense(){
-  const itemTitle = expenseTitle.value
-
-  const itemCategory = expenseCategory.value
-
-  const itemAmount = expenseCategory.value
-
-  const itemDate = expenseDate.value
-
-  const item = {
-    title : itemTitle,
-    amount : itemAmount,
-    category : itemCategory,
-    date : itemDate
-  }
-  
-
+// Add Expense Function
   function addExpense(){
   const categoryItem = document.createElement("li")
   
@@ -80,7 +65,33 @@ function createExpense(){
     expenseList.append(categoryItem)
   console.log(expenseList.innerHTML, expenseList.childElementCount)
     console.log(expenseChart.innerHTML)
-}
+  }
+
+// Create expense function
+function createExpense(){
+  const itemTitle = expenseTitle.value
+
+  const itemCategory = expenseCategory.value
+
+  const itemAmount = expenseCategory.value
+
+  const itemDate = expenseDate.value
+
+  const item = {
+    title : itemTitle,
+    amount : itemAmount,
+    category : itemCategory,
+    date : itemDate
+  }
+
+
+
+const list = []
+
+
+  
+
+
   addExpense()
 
   list.push(item)
