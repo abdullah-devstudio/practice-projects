@@ -72,7 +72,7 @@ function createExpense(){
   
 }
 
-expenseForm.addEventListener("submit", (e) => {
+export expenseForm.addEventListener("submit", (e) => {
   e.preventDefault();
   checkStatus();
   expenseForm.reset();
