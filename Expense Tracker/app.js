@@ -1,3 +1,4 @@
+// Access DOM
 const totalExpense = document.querySelector("#current-total")
 
 const expenseChart = document.querySelector("#expense-chart")
