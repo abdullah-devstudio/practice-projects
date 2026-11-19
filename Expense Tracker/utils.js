@@ -1,3 +1,6 @@
+// Importing Variables Ftom Utils.js
+import {totalExpense, expenseChart, expenseList, expenseForm, }
+
 // Checking Empty list and Total
 export function checkStatus(){
   if(totalExpense.textContent.trim()===""){
