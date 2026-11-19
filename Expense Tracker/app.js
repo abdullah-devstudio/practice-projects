@@ -19,9 +19,9 @@ if(totalExpense.textContent.trim()===""){
   totalExpense.classList.add("message")
 }
 
-if(expenseList.children.leng){
-  expenseChart.textContent = "Not Expense Yet"
-  expenseChart.classList.add("message")
+if(expenseList.children.length === 0){
+  const listStatus = document.createElement("p")
+  listStatus.textContent = "Not expense yet"
 }
 
 const list = []
