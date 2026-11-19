@@ -11,6 +11,9 @@ export function checkStatus(){
     const expenseMessage = document.createElement("p")
     expenseMessage.textContent = "Not Expense Yet"
     expenseMessage.classList.add("message")
+
+    expenseChart.append(expenseMessage)
+    totalExpense.append(totalMessage)
   }
 
   else{
