@@ -21,7 +21,7 @@ function createExpense(){
 
   const itemCategory = expenseCategory.value
 
-  const itemAmount = expenseCategory.value
+  const itemAmount = expenseAmount.value
 
   const itemDate = expenseDate.value
 
@@ -32,24 +32,17 @@ function createExpense(){
     date : itemDate
   }
 
-
-
 const list = []
-
-
   
-
-
   addExpense()
 
   list.push(item)
-}
 
 // Add Expense Function
   export function addExpense(){
   const categoryItem = document.createElement("li")
   
-  const categoryList = document.createElement("ul")
+  const itemList = document.createElement("ul")
   
   const titleElement = document.createElement("li")
   const categoryElement = document.createElement("li")
@@ -58,30 +51,20 @@ const list = []
 
   titleElement.textContent = itemTitle
     
-    console.log(titleElement.textContent)
-    
   categoryElement.textContent = itemCategory
     
-    console.log(categoryElement.textContent)
-    
   amountElement.textContent = itemAmount
-    console.log(amountElement.textContent)
-
-  dateElement.textContent = itemDate
-    console.log(dateElement.textContent)
-
-  categoryList.append(titleElement, amountElement, categoryElement, dateElement)
-
-    console.log(categoryList.innerHTML)
     
- categoryItem.append(categoryList)
+  dateElement.textContent = itemDate
 
-    console.log(categoryItem.innerHTML)
+  itemList.append(titleElement, amountElement, categoryElement, dateElement)
+    
+  categoryItem.append(itemList)
 
-    expenseList.append(categoryItem)
-  console.log(expenseList.innerHTML, expenseList.childElementCount)
-    console.log(expenseChart.innerHTML)
+  expenseList.append(categoryItem)
   }
+  
+}
 
 expenseForm.addEventListener("submit", (e) => {
   e.preventDefault();
