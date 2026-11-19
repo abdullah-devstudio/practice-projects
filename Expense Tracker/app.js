@@ -22,6 +22,7 @@ if(totalExpense.textContent.trim()===""){
 if(expenseList.children.length === 0){
   const listStatus = document.createElement("p")
   listStatus.textContent = "Not expense yet"
+  expenseChart.append(listStatus)
 }
 
 const list = []
