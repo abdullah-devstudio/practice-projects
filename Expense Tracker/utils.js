@@ -1,69 +1,66 @@
-// Importing Variables Ftom Utils.js
-import {totalExpense, expenseChart, expenseList, expenseForm, expenseTitle, expenseAmount, expenseCategory, expenseDate} from "./ui.js"
+import{expenseForm, expenseList, totalExpense, expenseChart, expenseTitle, expenseCategory, expenseAmount, expenseDate, totalStatus,expenseStatus} from "./ui.js"
 
-// Checking Empty list and Total
-export function checkStatus(){
-  if(expenseList.children.length === 0){
-    const totalMessage = document.createElement("p")
-    totalMessage.textContent = "Not Total Yet Add Expense First"
-    totalMessage.classList.add("message")
-
-    const expenseMessage = document.createElement("p")
-    expenseMessage.textContent = "Not Expense Yet"
-    expenseMessage.classList.add("message")
-
-    expenseChart.append(expenseMessage)
-    totalExpense.append(totalMessage)
-  }
-
-  else{
-    createExpense()
-  }
-}
-
-// Create expense function
-function createExpense(){
+export const createExpense = ()=>{
   const itemTitle = expenseTitle.value
-
   const itemCategory = expenseCategory.value
-
-  const itemAmount = expenseAmount.value
-
+  const itemAmount = Number(expenseAmount.value)
   const itemDate = expenseDate.value
+
+  
 
   const item = {
     title : itemTitle,
-    amount : itemAmount,
     category : itemCategory,
+    amount : itemAmount,
     date : itemDate
   }
-  
-  addExpense()
 
-// Add Expense Function
-  export function addExpense(){
-  const categoryItem = document.createElement("li")
+  return item
+}
+
+export const addExpense = (item)=>{
+
+
+  // Creating Elements
+  const expenseElement = document.createElement("li")
   
-  const itemList = document.createElement("ul")
-  
+  const expenseListElement = document.createElement("ul")
+  expenseListElement.classList.add("expense-list")
+
   const titleElement = document.createElement("li")
+  titleElement.classList.add("expense-data")
+
   const categoryElement = document.createElement("li")
+  categoryElement.classList.add("expense-data")
+
   const amountElement = document.createElement("li")
+  amountElement.classList.add("expense-data")
+
   const dateElement = document.createElement("li")
+  dateElement.classList.add("expense-data")
 
-  titleElement.textContent = itemTitle
-    
-  categoryElement.textContent = itemCategory
-    
-  amountElement.textContent = itemAmount
-    
-  dateElement.textContent = itemDate
-
-  itemList.append(titleElement, amountElement, categoryElement, dateElement)
-    
-  categoryItem.append(itemList)
-
-  expenseList.append(categoryItem)
-  }
   
+  //  Adding Text Content
+  titleElement.textContent = `Title: ${item.title}`
+  
+  categoryElement.textContent = `Category: ${item.category} `
+  
+  amountElement.textContent = `Amount: ${item.amount}`
+
+  dateElement.textContent = `Date: ${item.date}`
+
+
+  // Appending
+  expenseListElement.append(titleElement, categoryElement, amountElement, dateElement)
+
+  expenseElement.append(expenseListElement)
+
+  expenseList.append(expenseElement)
+}
+
+export const checkStatus = ()=>{
+  if(expenseList.children.length>0){
+    totalStatus.textContent = ""
+    expenseStatus.textContent = ""
+  }
 }
