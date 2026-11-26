@@ -1,13 +1,29 @@
-import {totalExpense, expenseChart, expenseList, expenseForm, expenseTitle, expenseAmount, expenseCategory, expenseDate} from "./ui.js"
+import{expenseForm, expenseList, totalExpense, expenseChart, expenseTitle, expenseCategory, expenseAmount, expenseDate} from "./ui.js"
 
-import{checkStatus, createExpense, addExpense } from "./utils.js"
+import{addExpense, createExpense, checkStatus} from "./utils.js"
 
-expenseForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkStatus();
-  expenseForm.reset();
-});
+const list = []
+const totalMessage = document.querySelector("#total-message")
 
+const calculateTotal = ()=>{
+  const calculateTotalExpense = list.reduce((total, itemAmount)=>{
+  total += itemAmount.amount
+  return total
+},0)
 
+  const totalExpenseCalculated = calculateTotalExpense
 
+totalMessage.textContent = `Total Expense ${totalExpenseCalculated}`
+}
 
+checkStatus()
+expenseForm.addEventListener("submit",(e)=>{
+  e.preventDefault()
+  const currentItem = createExpense()
+  
+  list.push(currentItem)
+  addExpense(currentItem)
+  calculateTotal()
+  checkStatus()
+  expenseForm.reset()
+})
